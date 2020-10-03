@@ -9,8 +9,8 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 
 const Login = () => {
-    const { value2 } = useContext(UserContext);
-    const [loggedInUser, setLoggedInUser] = value2;
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    
     // initializing firebase app
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);

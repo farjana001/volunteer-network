@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import Admin from '../Pages/Admin';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import RegisterList from '../Pages/RegisterList';
@@ -9,9 +10,15 @@ import Header from './Header';
 import HomeCard from './HomeCard';
 
 const Home = () => {
-    const {value1} = useContext(UserContext);
-    const [data, setData] = value1;
-    console.log(data);
+    
+    const [data, setData] = useState([]);
+    // console.log(data);
+    useEffect(() => {
+        fetch('http://localhost:5000/events')
+        .then(res => res.json())
+        .then(data => setData(data))
+    }, [])
+
     return (
         <div className="header-bg">
             <Header />
@@ -31,6 +38,7 @@ const Home = () => {
                 </div>
             </div>
             </div>
+            <Admin />
             <Login />
             <Register />
             <SingleUserEvents />
