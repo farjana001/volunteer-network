@@ -47,6 +47,7 @@ const Register = () => {
                         <Link className='reg-btn'></Link>
                         </div> */}
                         <input type="submit" value="Submit"/>
+                        <Link to='/home'>Go Back</Link>
                     </form>
                 </div>
             </div>

@@ -13,9 +13,9 @@ const Header = () => {
                 </div>
                 <div className="col-md-8 pt-3 d-flex justify-content-end">
                     <NavLink className='nav-link' to='/home'>Home</NavLink>
-                    <NavLink className='nav-link text-muted' to='/donation'>Donation</NavLink>
-                    <NavLink className='nav-link text-muted' to='/events'>Events</NavLink>
-                    <NavLink className='nav-link text-muted' to='/blog'>Blog</NavLink>
+                    <NavLink className='nav-link' to='/login'>login</NavLink>
+                    <NavLink className='nav-link' to='/events'>Events</NavLink>
+                    <NavLink className='nav-link' to='/blog'>Blog</NavLink>
                     {
                         loggedInUser && <h6 className='px-3 mt-2'>{loggedInUser.name}</h6>
                     }

@@ -38,11 +38,11 @@ const Home = () => {
                 </div>
             </div>
             </div>
-            <Admin />
+            {/* <Admin />
             <Login />
             <Register />
             <SingleUserEvents />
-            <RegisterList />
+            <RegisterList /> */}
         </div>
     );
 };

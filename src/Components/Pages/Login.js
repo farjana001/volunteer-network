@@ -39,6 +39,7 @@ const Login = () => {
                     <p onClick={handleGoogleSignIn} className='google-sign-in mt-5'><img src={googleIcon} alt="" /><span className='google-text'>Continue with Google</span></p>
                     <p>Don't have an account? <Link>Create an account</Link></p>
                 </div>
+                 <Link to='/home'>Go Back</Link>
             </div>
         </div>
     );
