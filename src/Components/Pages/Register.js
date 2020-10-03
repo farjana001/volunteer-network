@@ -1,9 +1,13 @@
-import { TextField } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 
 const Register = () => {
+    const {value2} = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = value2;
+
     return (
         <div className="container page-bg p-5">
             <div className="text-center">
@@ -13,11 +17,11 @@ const Register = () => {
                 <h3 className='mb-5'>Register as a Volunteer</h3>
                 <div>
                     <form className=''>
-                        <input className='reg-input' type="text" placeholder='Full Name'/>
-                        <input className='reg-input' type="text" placeholder='Username or Email'/>
-                        <input className='reg-input' type="text" placeholder='Date'/>
-                        <input className='reg-input' type="text" placeholder='Description'/>
-                        <input className='reg-input' type="text" placeholder='Volunteer title'/>
+                        <input name='name' defaultValue={loggedInUser.name} className='reg-input' type="text" placeholder='Full Name'/>
+                        <input name='email' defaultValue={loggedInUser.email} className='reg-input' type="text" placeholder='Username or Email'/>
+                        <input name='date' className='reg-input' type="date" placeholder='Date'/>
+                        <input name='description' className='reg-input' type="text" placeholder='Description'/>
+                        <input name='title' className='reg-input' type="text" placeholder='Volunteer title'/>
                         <div className="mt-2">
                         <Link className='reg-btn'>Register</Link>
                         </div>
