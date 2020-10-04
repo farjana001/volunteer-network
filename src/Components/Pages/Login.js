@@ -9,7 +9,8 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { value2 } = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = value2;
 
     const history = useHistory();
     const location = useLocation();

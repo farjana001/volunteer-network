@@ -4,7 +4,8 @@ import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { value2 } = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = value2;
     return (
         <div className='container'>
             <div className="row d-flex align-items-center pt-3">

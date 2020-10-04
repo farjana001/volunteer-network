@@ -10,14 +10,15 @@ import Header from './Header';
 import HomeCard from './HomeCard';
 
 const Home = () => {
-    
-    const [data, setData] = useState([]);
-    // console.log(data);
-    useEffect(() => {
-        fetch('http://localhost:5000/events')
-        .then(res => res.json())
-        .then(data => setData(data))
-    }, [])
+    const {value1} = useContext(UserContext);
+    const [data, setData] = value1;
+    // const [data, setData] = useState([]);
+    // // console.log(data);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/events')
+    //     .then(res => res.json())
+    //     .then(data => setData(data))
+    // }, [])
 
     return (
         <div className="header-bg">
