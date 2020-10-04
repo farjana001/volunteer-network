@@ -17,7 +17,7 @@ const Register = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        const volunteerDetails = { ...loggedInUser, events: data, orderTime: new Date() }
+        const volunteerDetails = { events: data, orderTime: new Date() }
         console.log(volunteerDetails.events)
         
         fetch('http://localhost:5000/addEvents', {
