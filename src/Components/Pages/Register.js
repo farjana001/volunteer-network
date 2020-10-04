@@ -1,24 +1,22 @@
 import React, { useContext } from 'react';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 
 const Register = () => {
     const history = useHistory();
     const { cardTitle } = useParams();
-    // console.log(cardTitle);
-    const { value1 } = useContext(UserContext);
-    const [data, setData] = value1;
-    
+
     const { value2 } = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = value2;
 
+
+    // sending form data to server
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         const volunteerDetails = { events: data, orderTime: new Date() }
-        
+
         fetch('http://localhost:5000/addEvents', {
             method: 'POST',
             headers: {
@@ -29,13 +27,15 @@ const Register = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    history.push('/userEvents') 
+                    history.push('/userEvents')
                 }
             })
 
-            
+
     };
 
+
+    // Creating registration form
     return (
         <div className="container page-bg p-5">
             <div className="text-center">
@@ -45,27 +45,25 @@ const Register = () => {
                 <h3 className='mb-5'>Register as a Volunteer</h3>
                 <div>
                     <form className='' onSubmit={handleSubmit(onSubmit)}>
-                        <input className='reg-input' name="name" defaultValue={loggedInUser.name} ref={register({ required: true })} placeholder='Full Name' /> <br/>
+
+                        <input className='reg-input' name="name" defaultValue={loggedInUser.name} ref={register({ required: true })} placeholder='Full Name' /> <br />
                         {errors.name && <span className='error'>Name is required</span>}
 
 
-                        <input className='reg-input' name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder='email' /> <br/>
+                        <input className='reg-input' name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder='email' /> <br />
                         {errors.email && <span className='error'>Email is required</span>}
 
 
-                        <input className='reg-input' name="date" type="date" ref={register({ required: true })} placeholder='Select Date' /> <br/>
+                        <input className='reg-input' name="date" type="date" ref={register({ required: true })} placeholder='Select Date' /> <br />
                         {errors.date && <span className='error'>Date is required</span>}
 
 
-                        <input className='reg-input' name="description" ref={register({ required: true })} placeholder='Description' /> <br/>
+                        <input className='reg-input' name="description" ref={register({ required: true })} placeholder='Description' /> <br />
                         {errors.description && <span className='error'>This field is required</span>}
 
                         <input className='reg-input' name="title" defaultValue={cardTitle} ref={register({ required: true })} placeholder='volunteer title' />
-                        {/* {errors.phone && <span className='error'>This field is required</span>} */}
 
-
-                        <input type="submit" />
-                        <Link to='/home'>Go to Home</Link>
+                        <input className='reg-btn' type="submit" value="Register" />
                     </form>
                 </div>
             </div>

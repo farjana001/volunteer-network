@@ -12,6 +12,7 @@ import Login from './Components/Pages/Login';
 import PrivateRoute from './Components/PrivateRoute';
 import SingleUserEvents from './Components/Pages/SingleUserEvents';
 import EventList from './Components/Pages/EventList';
+import Header from './Components/Home/Header';
 
 
 export const UserContext = createContext();
@@ -35,6 +36,7 @@ function App() {
   return (
     <UserContext.Provider value={{value1:[data, setData], value2: [loggedInUser, setLoggedInUser], value3:[events, setEvents]}}>
       <Router>
+        <Header />
         <Switch>
         <Route exact path="/">
             <Home />

@@ -9,9 +9,14 @@ const Header = () => {
     return (
         <div className='container'>
             <div className="row d-flex align-items-center pt-3">
+
+                {/* logo */}
                 <div className="col-md-4 py-3">
                     <Link to='/home'><img className='logo' src={logo} alt="" /></Link>
                 </div>
+
+
+                {/* navbar */}
                 <div className="col-md-8 pt-3 d-flex justify-content-end">
                     <NavLink className='nav-link' to='/home'>Home</NavLink>
                     <NavLink className='nav-link' to='/login'>login</NavLink>
