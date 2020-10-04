@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import logo from '../../logos/Group 1329.png';
 import googleIcon from '../../logos/google.png';
 import * as firebase from "firebase/app";
@@ -10,7 +10,11 @@ import { UserContext } from '../../App';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    
+
+    const history = useHistory();
+    const location = useLocation();
+
+    let { from } = location.state || { from: { pathname: "/register" } };
     // initializing firebase app
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
@@ -23,6 +27,7 @@ const Login = () => {
             const {displayName, email} = result.user;
             const signedInUser = {name:displayName, email};
             setLoggedInUser(signedInUser);
+            history.replace(from);
           })
           .catch(error => {
             var errorCode = error.code;
@@ -37,7 +42,7 @@ const Login = () => {
                 <div>
                     <h3>Login With</h3>
                     <p onClick={handleGoogleSignIn} className='google-sign-in mt-5'><img src={googleIcon} alt="" /><span className='google-text'>Continue with Google</span></p>
-                    <p>Don't have an account? <Link>Create an account</Link></p>
+                    <p>Don't have an account? <Link to='/home'>Create an account</Link></p>
                 </div>
                  <Link to='/home'>Go Back</Link>
             </div>

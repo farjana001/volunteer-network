@@ -9,6 +9,8 @@ import {
 import Home from './Components/Home/Home';
 import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
+import PrivateRoute from './Components/PrivateRoute';
+import SingleUserEvents from './Components/Pages/SingleUserEvents';
 
 
 export const UserContext = createContext();
@@ -33,6 +35,12 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/userEvent">
+            <SingleUserEvents />
+          </Route>
+          <PrivateRoute path="/register">
+            <Register />
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>
