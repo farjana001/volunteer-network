@@ -100,7 +100,7 @@ input:focus{
   list-style-type: none;
   display: inline-block;
   padding: 15px;
-  padding-right: 80px;
+  /* padding-right: 80px; */
   font-weight: 500;
 }
 .ship-form{
@@ -117,4 +117,24 @@ input:focus{
 .error{
   color: red;
 }
+.list-body li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.list-body{
+  
+  
+}
+.deleteBtn{
+  background: none;
+  border: none;
+  outline:none;
+}
+.deleteBtn:focus{
+  border: none;
+  outline:none;
+}
+
 

@@ -1,32 +1,38 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import Header from '../Home/Header';
+import SingleUserEventDetail from '../SingleUserEventDetail';
+
 
 const SingleUserEvents = () => {
-    const [events, setEvents] = useState([]);
+
 
     const { value2 } = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = value2;
+    const userEmail = { ...loggedInUser }
+    // console.log('loggedInUser', userEmail.email);
+
+    const [userEvents, setUserEvents] = useState([]);
+
 
     useEffect(() => {
-        fetch('http://localhost:5000/userEvent?email='+loggedInUser.email)
+        fetch('http://localhost:5000/userEvent')
             .then(res => res.json())
-            .then(data => setEvents(data));
+            .then(data => setUserEvents(data));
     }, [])
-    console.log(events);
+    const selectedEvents = userEvents.filter(evt => evt.events.email === userEmail.email);
+    // console.log(selectedEvents);
     return (
-        <div className='container page-bg py-5'>
+        <div className='container page-bg'>
             <Header />
-            <div className="row my-5 text-white d-flex justify-content-center p-3">
-                <div className="col-md-8">
-                    <div className="single-event rounded bg-danger">
-                        <h6>{events.length}</h6>
-                        {
-                            events.map(evt => <li>{evt.events.title} name: {evt.events.name} Date: {(new Date(evt.events.date).toDateString('dd/MM/yyyy'))}</li>)
-                        }
-                    </div>
+            <div className="row d-flex">
+                <div className="col row">
+                    {
+                        selectedEvents.map(evt => <SingleUserEventDetail singleUserEvents={evt}></SingleUserEventDetail>)
+                    }
                 </div>
             </div>
+
         </div>
     );
 };

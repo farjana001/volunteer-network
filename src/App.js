@@ -11,6 +11,7 @@ import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
 import PrivateRoute from './Components/PrivateRoute';
 import SingleUserEvents from './Components/Pages/SingleUserEvents';
+import EventList from './Components/Pages/EventList';
 
 
 export const UserContext = createContext();
@@ -18,17 +19,21 @@ export const UserContext = createContext();
 function App() {
   const [data, setData] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState([]);
-
- 
+  const [events, setEvents] = useState([]);
+  
   // console.log(data);
   useEffect(() => {
       fetch('http://localhost:5000/events')
       .then(res => res.json())
       .then(data => setData(data))
-  }, [])
 
+      fetch('http://localhost:5000/userEvent')
+      .then(res => res.json())
+      .then(data => setEvents(data))
+  }, [])
+  // console.log(data);
   return (
-    <UserContext.Provider value={{value1:[data, setData], value2: [loggedInUser, setLoggedInUser]}}>
+    <UserContext.Provider value={{value1:[data, setData], value2: [loggedInUser, setLoggedInUser], value3:[events, setEvents]}}>
       <Router>
         <Switch>
         <Route exact path="/">
@@ -46,7 +51,9 @@ function App() {
           <Route path="/userEvents">
             <SingleUserEvents />
           </Route>
-         
+          <Route path="/events">
+            <EventList />
+          </Route>
           <PrivateRoute path="/title/:cardTitle">
             <Register />
           </PrivateRoute>

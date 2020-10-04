@@ -8,7 +8,7 @@ import logo from '../../logos/Group 1329.png';
 const Register = () => {
     const history = useHistory();
     const { cardTitle } = useParams();
-    console.log(cardTitle);
+    // console.log(cardTitle);
     const { value1 } = useContext(UserContext);
     const [data, setData] = value1;
     
@@ -18,7 +18,6 @@ const Register = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         const volunteerDetails = { events: data, orderTime: new Date() }
-        console.log(volunteerDetails.events)
         
         fetch('http://localhost:5000/addEvents', {
             method: 'POST',
@@ -30,12 +29,11 @@ const Register = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    console.log(data);
-                    alert('registered successfully')
+                    history.push('/userEvents') 
                 }
             })
 
-            history.push('/userEvents')
+            
     };
 
     return (
