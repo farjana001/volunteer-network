@@ -11,7 +11,7 @@ const HomeCard = (props) => {
     }
 
     return (
-        <Link onClick={handleCardItem} to={'/title/' + title} className="col-md-3">
+        <Link onClick={handleCardItem} to={'/title/' + title} className="col-md-3 nav-link">
             <div className=" pb-3">
                 <Card onClick={handleCardItem} className='bg-primary text-white single-card'>
                     <Card.Img variant="top" src={img} />

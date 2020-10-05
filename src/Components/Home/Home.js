@@ -2,7 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 import AdminEvents from '../Pages/AdminEvents';
-// import Header from './Header';
+import Footer from './Footer';
+import Header from './Header';
 import HomeCard from './HomeCard';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
 
     return (
         <div className="header-bg">
+            <Header />
             <div className="container text-center mt-5 pt-5 ">
                 <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
 
@@ -20,7 +22,7 @@ const Home = () => {
                         <button className="search-button rounded-right">Search</button>
                     </form>
                 </div>
-                
+
                 <div className="row d-flex">
                     <div className="col row mt-4">
                         {
@@ -30,6 +32,7 @@ const Home = () => {
                 </div>
                 <AdminEvents />
             </div>
+            <Footer />
         </div>
     );
 };

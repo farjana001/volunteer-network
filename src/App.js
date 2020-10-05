@@ -12,8 +12,8 @@ import Login from './Components/Pages/Login';
 import PrivateRoute from './Components/PrivateRoute';
 import SingleUserEvents from './Components/Pages/SingleUserEvents';
 import EventList from './Components/Pages/EventList';
-import Header from './Components/Home/Header';
 import Admin from './Components/Pages/Admin';
+import NotMatch from './Components/NotMatch';
 
 
 export const UserContext = createContext();
@@ -22,24 +22,22 @@ function App() {
   const [data, setData] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState([]);
   const [events, setEvents] = useState([]);
-  
-  // console.log(data);
+
   useEffect(() => {
-      fetch('http://localhost:5000/events')
+    fetch('http://localhost:5000/events')
       .then(res => res.json())
       .then(data => setData(data))
 
-      fetch('http://localhost:5000/userEvent')
+    fetch('http://localhost:5000/userEvent')
       .then(res => res.json())
       .then(data => setEvents(data))
   }, [])
-  // console.log(data);
+
   return (
-    <UserContext.Provider value={{value1:[data, setData], value2: [loggedInUser, setLoggedInUser], value3:[events, setEvents]}}>
+    <UserContext.Provider value={{ value1: [data, setData], value2: [loggedInUser, setLoggedInUser], value3: [events, setEvents] }}>
       <Router>
-        <Header />
         <Switch>
-        <Route exact path="/">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/home">
@@ -63,6 +61,9 @@ function App() {
           <PrivateRoute path="/title/:cardTitle">
             <Register />
           </PrivateRoute>
+          <Route path="*">
+            <NotMatch />
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>

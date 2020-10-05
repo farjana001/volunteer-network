@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 import trash from '../../logos/trash-2 9.png';
+import plusIcon from '../../logos/plus 1.png';
 
 const EventList = () => {
 
@@ -33,26 +34,24 @@ const EventList = () => {
     return (
         <>
             <div className="container-fluid my-5">
-
                 <div className="d-flex align-items-center">
                     <img className='logo mx-5 pr-5' src={logo} alt="" />
-                    <h4 >Volunteer register list</h4>
+                    <h4 className="ml-5">Volunteer register list</h4>
                 </div>
 
                 <div className="row my-5">
-
-                    <div className="col-md-3 sidebar">
-                        <p className='pl-5'>Add Event</p>
+                    <div className="col-md-3 sidebar mt-5">
+                        <Link to="/admin" className='pl-5'><img style={{width:'10px'}} src={plusIcon} alt=""/>  Add Event</Link>
                     </div>
 
                     {/* event list heading */}
-                    <div className="col-md-9 bg-info p-2">
+                    <div className="col-md-9 page-bg p-5">
                         <div className="rounded bg-white p-3">
                             <ul className='list-heading mt-3'>
                                 <li>Name</li>
                                 <li className='mx-5 px-5'>Email ID</li>
-                                <li className='ml-5 px-5'>Registration Date</li>
-                                <li className='ml-5 px-5'>Volunteer List</li>
+                                <li className='ml-5 px-4'>Registration Date</li>
+                                <li className='ml-5 px-4'>Volunteer List</li>
                                 <li>Action</li>
                             </ul>
                         </div>

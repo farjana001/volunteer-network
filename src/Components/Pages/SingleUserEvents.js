@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import Header from '../Home/Header';
 import SingleUserEventDetail from './SingleUserEventDetail';
 
 
@@ -30,6 +31,7 @@ const SingleUserEvents = () => {
 
     return (
         <div className='container page-bg'>
+            <Header />
             <div className="row d-flex">
                 <div className="col row">
                     {

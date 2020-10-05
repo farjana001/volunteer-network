@@ -23,7 +23,7 @@ const Header = () => {
                     <NavLink className='nav-link' to='/events'>Events</NavLink>
                     <NavLink className='nav-link' to='/blog'>Blog</NavLink>
                     {
-                        loggedInUser && <h6 className='px-3 mt-2'><Link to='/userEvents'>{loggedInUser.name}</Link></h6>
+                        loggedInUser && <h6 className='px-3 mt-2'><Link className="text-danger" to='/userEvents'>{loggedInUser.name}</Link></h6>
                     }
                     <NavLink className='mr-2' to='/register'><button className='register btn btn-primary'>Register</button></NavLink>
                     <NavLink className=' ' to='/admin'><button className='admin btn btn-dark'>Admin</button></NavLink>
