@@ -5,7 +5,7 @@ import logo from '../../logos/Group 1329.png';
 
 const Header = () => {
     const { value2 } = useContext(UserContext);
-    const [loggedInUser, setLoggedInUser] = value2;
+    const [ loggedInUser ] = value2;
     return (
         <div className='container'>
             <div className="row d-flex align-items-center pt-3">

@@ -15,7 +15,7 @@ const AdminEvents = () => {
             <div className="row d-flex">
                 <div className="col row">
                     {
-                        newEvent.map(evt => <DisplayAddedEvents addedEvents={evt} />)
+                        newEvent.map(evt => <DisplayAddedEvents key={evt._id} addedEvents={evt} />)
                     }
                 </div>
             </div>

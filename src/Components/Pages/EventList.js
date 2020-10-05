@@ -19,17 +19,6 @@ const EventList = () => {
     const deleteEvent = id => {
         const selectedEvent = events.filter(evt => evt._id !== id);
         setEvents(selectedEvent);
-        // fetch(`http://localhost:5000/userEvent/delete/${id}`, {
-        //     method: 'DELETE',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(selectedEvent)
-        // })
-        // .then(res => res.json())
-        // .then(result => {
-        //  console.log('deleted');
-        // })
     }
     return (
         <>
@@ -60,13 +49,16 @@ const EventList = () => {
                         <div className="list-body bg-white rounded pb-4">
                             {
                                 events.map(evt =>
-                                    <li>
+                                    <li key={evt._id}>
                                         <span>{evt.events.name}</span>
                                         <span>{evt.events.email}</span>
                                         <span>{evt.events.date}</span>
                                         <span>{evt.events.title}</span>
-                                        <button onClick={() => deleteEvent(`${evt._id}`)}
-                                            className='deleteBtn'><img className='bg-danger w-50' src={trash} alt="" /></button>
+                                        <button 
+                                        onClick={() => deleteEvent(`${evt._id}`)}
+                                        className='deleteBtn'>
+                                        <img className='bg-danger w-50' src={trash} alt="" />
+                                        </button>
                                     </li>)
                             }
                         </div>

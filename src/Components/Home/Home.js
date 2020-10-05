@@ -26,7 +26,7 @@ const Home = () => {
                 <div className="row d-flex">
                     <div className="col row mt-4">
                         {
-                            data.map(dt => <HomeCard key={dt.id} data={dt} />)
+                            data.map(dt => <HomeCard key={dt._id} data={dt} />)
                         }
                     </div>
                 </div>

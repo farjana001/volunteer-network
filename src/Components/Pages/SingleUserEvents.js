@@ -9,7 +9,7 @@ const SingleUserEvents = () => {
 
     // getting loggedInUser
     const { value2 } = useContext(UserContext);
-    const [loggedInUser, setLoggedInUser] = value2;
+    const [loggedInUser] = value2;
     const userEmail = { ...loggedInUser }
 
     // loading all events data
@@ -35,7 +35,7 @@ const SingleUserEvents = () => {
             <div className="row d-flex">
                 <div className="col row">
                     {
-                        selectedEvents.map(evt => <SingleUserEventDetail singleUserEvents={evt} handleCancelBtn={handleCancelBtn}></SingleUserEventDetail>)
+                        selectedEvents.map(evt => <SingleUserEventDetail key={evt._id} singleUserEvents={evt} handleCancelBtn={handleCancelBtn}></SingleUserEventDetail>)
                     }
                 </div>
             </div>

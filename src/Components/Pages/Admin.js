@@ -1,11 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../../logos/Group 1329.png';
 import plusIcon from '../../logos/plus 1.png';
-import upload from '../../logos/cloud-upload-outline 1.png'
 
 const Admin = () => {
+    const history = useHistory()
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         const addNewEvent = { data }
@@ -21,6 +21,7 @@ const Admin = () => {
             .then(data => {
                alert('Event added successfully')
             })
+            history.push('/home');
             
     };
 

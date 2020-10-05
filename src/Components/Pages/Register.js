@@ -46,22 +46,44 @@ const Register = () => {
                 <div>
                     <form className='' onSubmit={handleSubmit(onSubmit)}>
 
-                        <input className='reg-input' name="name" defaultValue={loggedInUser.name} ref={register({ required: true })} placeholder='Full Name' /> <br />
+                        <input
+                            className='reg-input'
+                            name="name"
+                            defaultValue={loggedInUser.name}
+                            ref={register({ required: true })}
+                            placeholder='Full Name' /> <br />
                         {errors.name && <span className='error'>Name is required</span>}
 
 
-                        <input className='reg-input' name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder='email' /> <br />
+                        <input
+                            className='reg-input' name="email"
+                            defaultValue={loggedInUser.email}
+                            ref={register({ required: true })} placeholder='email' /> <br />
                         {errors.email && <span className='error'>Email is required</span>}
 
 
-                        <input className='reg-input' name="date" type="date" ref={register({ required: true })} placeholder='Select Date' /> <br />
+                        <input
+                            className='reg-input'
+                            name="date"
+                            type="date"
+                            ref={register({ required: true })}
+                            placeholder='Select Date' /> <br />
                         {errors.date && <span className='error'>Date is required</span>}
 
 
-                        <input className='reg-input' name="description" ref={register({ required: true })} placeholder='Description' /> <br />
+                        <input
+                            className='reg-input'
+                            name="description"
+                            ref={register({ required: true })}
+                            placeholder='Description' /> <br />
                         {errors.description && <span className='error'>This field is required</span>}
 
-                        <input className='reg-input' name="title" defaultValue={cardTitle} ref={register({ required: true })} placeholder='volunteer title' />
+                        <input
+                            className='reg-input'
+                            name="title"
+                            defaultValue={cardTitle}
+                            ref={register({ required: true })}
+                            placeholder='volunteer title' />
 
                         <input className='reg-btn' type="submit" value="Register" />
                     </form>
