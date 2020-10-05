@@ -10,7 +10,7 @@ const Admin = () => {
     const onSubmit = data => {
         const addNewEvent = { data }
 
-        fetch('http://localhost:5000/addedEvents', {
+        fetch('https://nameless-thicket-49062.herokuapp.com/addedEvents', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,22 +19,22 @@ const Admin = () => {
         })
             .then(res => res.json())
             .then(data => {
-               alert('Event added successfully')
+                alert('Event added successfully')
             })
-            history.push('/home');
-            
+        history.push('/home');
+
     };
 
     return (
         <>
             <div className="container-fluid py-5 page-bg">
                 <div className="d-flex align-items-center">
-                    <img className='logo mx-5 pr-5' src={logo} alt="" />
+                    <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
                     <h5>Add Event</h5>
                 </div>
                 <div className="container row my-5">
                     <div className="col-md-3 sidebar mt-5">
-                    <Link to="/admin" className='pl-5'><img style={{width:'10px'}} src={plusIcon} alt=""/>  Add Event</Link>
+                        <Link to="/admin" className='pl-5'><img style={{ width: '10px' }} src={plusIcon} alt="" />  Add Event</Link>
                     </div>
                     <div className="col-md-9 bg-white p-2">
                         <form className='d-flex admin-form' onSubmit={handleSubmit(onSubmit)}>
@@ -52,7 +52,7 @@ const Admin = () => {
 
                                 <input name="banner" type="link" ref={register({ required: true })} placeholder="upload image url" />
                                 {errors.banner && <span className='error'>image url is required</span>}
-                                <input className='add-event' type="submit" value="Add Event"/>
+                                <input className='add-event' type="submit" value="Add Event" />
                             </div>
 
                         </form>

@@ -15,7 +15,7 @@ const SingleUserEvents = () => {
     // loading all events data
     const [userEvents, setUserEvents] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/userEvent')
+        fetch('https://nameless-thicket-49062.herokuapp.com/userEvent')
             .then(res => res.json())
             .then(data => setUserEvents(data));
     }, [])
@@ -25,8 +25,19 @@ const SingleUserEvents = () => {
     const selectedEvents = userEvents.filter(evt => evt.events.email === userEmail.email);
 
     const handleCancelBtn = id => {
-        const selectedEvent = userEvents.filter(evt => evt._id !== id);
-        setUserEvents(selectedEvent);
+        // const selectedEvent = userEvents.filter(evt => evt._id !== id);
+        // setUserEvents(selectedEvent);
+        fetch(`https://nameless-thicket-49062.herokuapp.com/delete/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(result => {
+            // if(result > 0){
+            //     alert('deleted')
+            // }
+            console.log('deleted');
+        })
+        console.log(id);
     }
 
     return (

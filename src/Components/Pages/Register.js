@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 
@@ -17,7 +17,7 @@ const Register = () => {
     const onSubmit = data => {
         const volunteerDetails = { events: data }
 
-        fetch('http://localhost:5000/addEvents', {
+        fetch('https://nameless-thicket-49062.herokuapp.com/addEvents', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Register = () => {
     return (
         <div className="container page-bg p-5">
             <div className="text-center">
-                <img className='logo my-3 ' src={logo} alt="" />
+                <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
             </div>
             <div className="volunteer-form border bg-white my-5 mx-auto p-5">
                 <h3 className='mb-5'>Register as a Volunteer</h3>

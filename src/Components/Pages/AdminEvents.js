@@ -5,7 +5,7 @@ const AdminEvents = () => {
     const [newEvent, setNewEvent] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/adminEvents')
+        fetch('https://nameless-thicket-49062.herokuapp.com/adminEvents')
             .then(res => res.json())
             .then(data => setNewEvent(data))
     })

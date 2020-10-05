@@ -11,20 +11,34 @@ const EventList = () => {
     const [events, setEvents] = value3;
 
     useEffect(() => {
-        fetch('http://localhost:5000/userEvent')
+        fetch('https://nameless-thicket-49062.herokuapp.com/userEvent')
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [])
 
-    const deleteEvent = id => {
-        const selectedEvent = events.filter(evt => evt._id !== id);
-        setEvents(selectedEvent);
+    // const deleteEvent = id => {
+    //     const selectedEvent = events.filter(evt => evt._id !== id);
+    //     setEvents(selectedEvent);
+    // }
+
+    const deleteEvent = (id) => {
+        fetch(`http://localhost:5000/delete/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(result => {
+            // if(result > 0){
+            //     alert('deleted')
+            // }
+            console.log('deleted');
+        })
+        console.log(id);
     }
     return (
         <>
             <div className="container-fluid my-5">
                 <div className="d-flex align-items-center">
-                    <img className='logo mx-5 pr-5' src={logo} alt="" />
+                    <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
                     <h4 className="ml-5">Volunteer register list</h4>
                 </div>
 
@@ -55,10 +69,12 @@ const EventList = () => {
                                         <span>{evt.events.date}</span>
                                         <span>{evt.events.title}</span>
                                         <button 
-                                        onClick={() => deleteEvent(`${evt._id}`)}
+                                        onClick={() => deleteEvent(evt._id)}
                                         className='deleteBtn'>
                                         <img className='bg-danger w-50' src={trash} alt="" />
                                         </button>
+
+                                        {/* <button onClick={() => deleteEvent(props.ev._id)}>Cancel</button> */}
                                     </li>)
                             }
                         </div>

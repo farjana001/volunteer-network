@@ -10,7 +10,7 @@ import { UserContext } from '../../App';
 
 const Login = () => {
     const { value2 } = useContext(UserContext);
-    const [ loggedInUser, setLoggedInUser ] = value2;
+    const [loggedInUser, setLoggedInUser] = value2;
 
     const history = useHistory();
     const location = useLocation();
@@ -42,7 +42,7 @@ const Login = () => {
 
     return (
         <div className="container text-center page-bg p-5">
-            <img className='logo my-3 ' src={logo} alt="" />
+            <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
             <div className="volunteer-form border bg-white my-5 mx-auto d-flex justify-content-center align-items-center">
                 <div>
                     <h3>Login With</h3>
