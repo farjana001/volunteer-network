@@ -38,7 +38,7 @@ const EventList = () => {
                 </div>
 
                 <div className="row mb-5">
-                   <div className="sidebar p-5">
+                   <div className=" p-5">
                         <Link to="/admin" className='pl-5'><img style={{ width: '10px' }} src={plusIcon} alt="" />  Add Event</Link>
                    </div>
 
