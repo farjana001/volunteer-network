@@ -5,7 +5,20 @@ import logo from '../../logos/Group 1329.png';
 const Admin = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
-        console.log('form submitted', data)
+        const addNewEvent = { data }
+
+        fetch('http://localhost:5000/addedEvents', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(addNewEvent)
+        })
+            .then(res => res.json())
+            .then(data => {
+               alert('Event added successfully')
+            })
+            
     };
 
     return (
@@ -33,7 +46,7 @@ const Admin = () => {
                                 <input name="date" type="date" ref={register({ required: true })} />
                                 {errors.date && <span className='error'>Address is required</span>}
 
-                                <input name="banner" type="file" ref={register({ required: true })} placeholder='Upload image' />
+                                <input name="banner" type="link" ref={register({ required: true })} placeholder='Upload image' />
                                 {errors.banner && <span className='error'>Phone Number is required</span>}
                                 <input type="submit" value="Add Event"/>
                             </div>

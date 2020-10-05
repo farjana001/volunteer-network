@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import AdminEvents from '../Pages/AdminEvents';
 // import Header from './Header';
 import HomeCard from './HomeCard';
 
@@ -27,6 +28,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
+                <AdminEvents />
             </div>
         </div>
     );
