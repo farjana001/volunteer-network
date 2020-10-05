@@ -43,10 +43,10 @@ const Login = () => {
     return (
         <div className="container text-center page-bg p-5">
             <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
-            <div className="volunteer-form border bg-white my-5 mx-auto d-flex justify-content-center align-items-center">
+            <div className="login-form border bg-white my-5 mx-auto d-flex justify-content-center align-items-center">
                 <div>
                     <h3>Login With</h3>
-                    <p onClick={handleGoogleSignIn} className='google-sign-in mt-5'><img src={googleIcon} alt="" /><span className='google-text'>Continue with Google</span></p>
+                    <p onClick={handleGoogleSignIn} className='google-sign-in mt-5'><img src={googleIcon} alt="" /><span className='login-text'>Continue with Google</span></p>
                     <p>Don't have an account? <Link to='/home'>Create an account</Link></p>
                 </div>
             </div>

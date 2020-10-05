@@ -9,19 +9,18 @@ body {
 
 
 }
-.header-bg{ 
-  background-image: url(./images/bg-img.jpg);
-  background-repeat: no-repeat;
-  height: 600px;
-  background-size: cover;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* general stylizing  */
 .logo{
   width: 200px;
+}
+.page-bg{
+  background-color: #f8fafc;
 }
 .input{
   width: 35%;
@@ -36,6 +35,19 @@ input::placeholder{
 input:focus{
   outline: none;
 }
+.error{
+  color: red;
+}
+
+/* for header background */
+.header-bg{ 
+  background-image: url(./images/bg-img.jpg);
+  background-repeat: no-repeat;
+  height: 600px;
+  background-size: cover;
+}
+
+/* homepage search button */
 .search-button{
   position: relative;
   right: 78px;
@@ -44,18 +56,20 @@ input:focus{
   color: white;
   padding:7px 15px;
 }
+
+/* card item styling for home component*/
 .single-card{
   cursor: pointer;
 }
 .single-card:hover{
   box-shadow: 2px 2px 10px rgb(95, 94, 94);
 }
-.page-bg{
-  background-color: #f8fafc;
-}
-.volunteer-form{
+
+/* styling login form */
+.login-form{
   height: 500px;
   width:50%;
+  box-shadow: 3px 3px 5px rgb(209, 208, 208);
 }
 .google-sign-in{
   border: 1px solid gray;
@@ -67,9 +81,11 @@ input:focus{
 .google-sign-in:hover{
   background-color: #f8fafc;
 }
-.google-text{
+.login-text{
   padding: 2px 100px;
 }
+
+/* styling registration form */
 .reg-input{
   width: 90%;
   border: none;
@@ -87,6 +103,8 @@ input:focus{
   text-decoration: none;
   background-color:rgb(14, 92, 165);
 }
+
+/* styling registered item list page */
 .list-heading {
   border-radius: 25px;
   background-color: #d4d8db;
@@ -95,9 +113,21 @@ input:focus{
   list-style-type: none;
   display: inline-block;
   padding: 15px;
-  /* padding-right: 80px; */
   font-weight: 500;
 }
+.list-body li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.add-event{
+  background-color:rgb(30, 121, 240);
+  color: white;
+}
+
+
+/* styling admin page form */
 .admin-form{
   margin: 30px 100px;
 }
@@ -109,16 +139,12 @@ input:focus{
   width: 300px;
   padding: 5px;
 }
-.error{
-  color: red;
-}
-.list-body li {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
+.description-input{
+  height: 100px;
 }
 
+
+/* styling delete page */
 .deleteBtn{
   background: none;
   border: none;
@@ -128,19 +154,9 @@ input:focus{
   border: none;
   outline:none;
 }
-
-.description-input{
-  height: 100px;
+.delete-body{
+  box-shadow: 3px 3px 6px rgb(185, 184, 184);
+  position: relative;
+  top: 8%;
+  height: 200px;
 }
-/* .sidebar{
-
-  position: absolute;
-  left: 0;
-  width: 300px;
-  height: 100%;
-} */
-.add-event{
-  background-color:rgb(30, 121, 240);
-  color: white;
-}
-

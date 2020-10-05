@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png';
 import trash from '../../logos/trash-2 9.png';
@@ -7,6 +7,7 @@ import plusIcon from '../../logos/plus 1.png';
 
 const EventList = () => {
 
+    const history = useHistory();
     const { value3 } = useContext(UserContext);
     const [events, setEvents] = value3;
 
@@ -16,21 +17,15 @@ const EventList = () => {
             .then(data => setEvents(data));
     }, [])
 
-    // const deleteEvent = id => {
-    //     const selectedEvent = events.filter(evt => evt._id !== id);
-    //     setEvents(selectedEvent);
-    // }
-
-    const deleteEvent = (id) => {
+    const deleteEvent = (id, event) => {
         fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
         .then(result => {
-            // if(result > 0){
-            //     alert('deleted')
-            // }
-            console.log('deleted');
+            if(result > 0){
+               history.push('/delete');
+            }
         })
         console.log(id);
     }

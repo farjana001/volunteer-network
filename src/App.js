@@ -14,6 +14,7 @@ import SingleUserEvents from './Components/Pages/SingleUserEvents';
 import EventList from './Components/Pages/EventList';
 import Admin from './Components/Pages/Admin';
 import NotMatch from './Components/NotMatch';
+import DeleteNote from './Components/Pages/DeleteNote';
 
 
 export const UserContext = createContext();
@@ -57,6 +58,9 @@ function App() {
           </Route>
           <Route path="/admin">
             <Admin />
+          </Route>
+          <Route path="/delete">
+            <DeleteNote />
           </Route>
           <PrivateRoute path="/title/:cardTitle">
             <Register />

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Header from '../Home/Header';
 import SingleUserEventDetail from './SingleUserEventDetail';
@@ -22,20 +23,18 @@ const SingleUserEvents = () => {
 
 
     // filtering loggedInUsers details
+    const history = useHistory();
     const selectedEvents = userEvents.filter(evt => evt.events.email === userEmail.email);
 
-    const handleCancelBtn = id => {
-        // const selectedEvent = userEvents.filter(evt => evt._id !== id);
-        // setUserEvents(selectedEvent);
-        fetch(`https://nameless-thicket-49062.herokuapp.com/delete/${id}`, {
+    const handleCancelBtn = (id) => {
+        fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
         .then(result => {
-            // if(result > 0){
-            //     alert('deleted')
-            // }
-            console.log('deleted');
+            if(result > 0){
+                history.push('/delete');
+            }
         })
         console.log(id);
     }

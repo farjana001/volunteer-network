@@ -39,9 +39,9 @@ const Register = () => {
     return (
         <div className="container page-bg p-5">
             <div className="text-center">
-                <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
+                <Link to="/home"><img className='logo mx-5' src={logo} alt="" /></Link>
             </div>
-            <div className="volunteer-form border bg-white my-5 mx-auto p-5">
+            <div className="login-form border bg-white my-5 mx-auto p-5">
                 <h3 className='mb-5'>Register as a Volunteer</h3>
                 <div>
                     <form className='' onSubmit={handleSubmit(onSubmit)}>
