@@ -40,7 +40,7 @@ const SingleUserEvents = () => {
     }
 
     return (
-        <div className='container page-bg'>
+        <div style={{height:'100vh'}} className='container page-bg'>
             <Header />
             <div className="row d-flex">
                 <div className="col row">

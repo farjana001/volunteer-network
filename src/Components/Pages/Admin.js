@@ -27,8 +27,8 @@ const Admin = () => {
 
     return (
         <>
-            <div className="pt-5 page-bg">
-                <div className="d-flex align-items-center">
+            <div className="page-bg ">
+                <div className="d-flex align-items-center bg-white py-4">
                     <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
                     <h5>Add Event</h5>
                 </div>

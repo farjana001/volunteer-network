@@ -31,20 +31,21 @@ const EventList = () => {
     }
     return (
         <>
-            <div className="container-fluid mt-5 page-bg">
-                <div className="d-flex align-items-center bg-white pb-4">
+            <div className="mt-5 page-bg eventList-body">
+                <div className="d-flex align-items-center pb-4 bg-white">
                     <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
                     <h4 className="ml-5">Volunteer register list</h4>
                 </div>
 
-                <div className="row mb-5">
-                   <div className=" p-5">
+                <div className="row">
+                   <div className="p-5">
                         <Link to="/admin" className='pl-5'><img style={{ width: '10px' }} src={plusIcon} alt="" />  Add Event</Link>
                    </div>
 
                     {/* event list heading */}
-                    <div className="col-md-9  p-5">
-                        <div className="rounded bg-white p-3">
+                    <div className="col-md-9">
+                        <div className="list-container bg-white">
+                        <div className="rounded p-3">
                             <ul className='list-heading mt-3'>
                                 <li className='ml-n4'>Name</li>
                                 <li className='mx-5 px-5'>Email ID</li>
@@ -55,7 +56,7 @@ const EventList = () => {
                         </div>
 
                         {/* event list body */}
-                        <div className="list-body bg-white rounded pb-4">
+                        <div className="rounded pb-4">
                             {
                                 events.map(evt =>
                                     <table key={evt._id} style={{marginLeft:'20px'}}>
@@ -74,6 +75,7 @@ const EventList = () => {
                                         </tr>
                                     </table>)
                             }
+                        </div>
                         </div>
                     </div>
                 </div>

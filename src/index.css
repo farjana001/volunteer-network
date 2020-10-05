@@ -109,6 +109,11 @@ input:focus{
 }
 
 /* styling registered item list page */
+.list-container{
+  position: relative;
+  left: 10%;
+  top: 30%;
+}
 .list-body{
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgb(185, 184, 184);
@@ -139,15 +144,18 @@ input:focus{
   position: absolute;
   height: 100vh;
 }
+.eventList-body{
+  height: 100vh;
+}
 
 
 /* styling admin page form */
 .admin-form{
-position: relative;
-left: 10%;
-height: 300px;
-border-radius: 10px;
-box-shadow: 3px 3px 6px rgb(185, 184, 184);
+  position: relative;
+  left: 10%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px rgb(185, 184, 184);
 }
 .admin-form input {
   display: block;
