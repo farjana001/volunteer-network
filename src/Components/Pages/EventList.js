@@ -75,7 +75,6 @@ const EventList = () => {
                                     </table>)
                             }
                         </div>
-
                     </div>
                 </div>
             </div>

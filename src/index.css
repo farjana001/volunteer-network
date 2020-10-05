@@ -136,12 +136,18 @@ input:focus{
 .sidebar{
   width:300px;
   background-color: white;
+  position: absolute;
+  height: 100vh;
 }
 
 
 /* styling admin page form */
 .admin-form{
-  margin: 30px 100px;
+position: relative;
+left: 10%;
+height: 300px;
+border-radius: 10px;
+box-shadow: 3px 3px 6px rgb(185, 184, 184);
 }
 .admin-form input {
   display: block;

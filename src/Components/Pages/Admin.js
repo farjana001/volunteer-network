@@ -27,17 +27,17 @@ const Admin = () => {
 
     return (
         <>
-            <div className="container-fluid py-5 page-bg">
+            <div className="pt-5 page-bg">
                 <div className="d-flex align-items-center">
                     <Link to="/home"><img className='logo mx-5 pr-5' src={logo} alt="" /></Link>
                     <h5>Add Event</h5>
                 </div>
-                <div className="container row my-5">
-                    <div className="col-md-3 sidebar mt-5">
+                <div className="container row mt-5">
+                    <div className="col-md-3 sidebar pt-5">
                         <Link to="/admin" className='pl-5'><img style={{ width: '10px' }} src={plusIcon} alt="" />  Add Event</Link>
                     </div>
-                    <div className="col-md-9 bg-white p-2">
-                        <form className='d-flex admin-form' onSubmit={handleSubmit(onSubmit)}>
+                    <div className="col-md-9 bg-white p-2 admin-form">
+                        <form className='d-flex ' onSubmit={handleSubmit(onSubmit)}>
                             <div className='p-4'>
                                 <input name="title" ref={register({ required: true })} placeholder='Enter Title' />
                                 {errors.title && <span className='error'>Name is required</span>}
@@ -54,7 +54,6 @@ const Admin = () => {
                                 {errors.banner && <span className='error'>image url is required</span>}
                                 <input className='add-event' type="submit" value="Add Event" />
                             </div>
-
                         </form>
                     </div>
                 </div>

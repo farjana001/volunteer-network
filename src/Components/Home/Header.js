@@ -5,8 +5,8 @@ import logo from '../../logos/Group 1329.png';
 
 const Header = () => {
     const { value2 } = useContext(UserContext);
-    const [ loggedInUser, setLoggedInUser] = value2;
-    const {name, photo} = loggedInUser;
+    const [loggedInUser, setLoggedInUser] = value2;
+    const { name, photo } = loggedInUser;
     return (
         <div className='container'>
             <div className="row d-flex align-items-center pt-3">
@@ -28,9 +28,9 @@ const Header = () => {
                         <div>
                             <h6 className='px-3 mt-2'>
                                 <Link className="text-danger" to='/userEvents'>{name}</Link>
-                                <img className="ml-2 user-img" src={photo} alt=""/>
+                                <img className="ml-2 user-img" src={photo} alt="" />
                             </h6>
-                            
+
                         </div>
                     }
                     <NavLink className='mr-2' to='/register'><button className='register btn btn-primary'>Register</button></NavLink>
