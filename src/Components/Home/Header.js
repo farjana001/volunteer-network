@@ -5,7 +5,8 @@ import logo from '../../logos/Group 1329.png';
 
 const Header = () => {
     const { value2 } = useContext(UserContext);
-    const [ loggedInUser ] = value2;
+    const [ loggedInUser, setLoggedInUser] = value2;
+    const {name, photo} = loggedInUser;
     return (
         <div className='container'>
             <div className="row d-flex align-items-center pt-3">
@@ -23,7 +24,14 @@ const Header = () => {
                     <NavLink className='nav-link' to='/events'>Events</NavLink>
                     <NavLink className='nav-link' to='/blog'>Blog</NavLink>
                     {
-                        loggedInUser && <h6 className='px-3 mt-2'><Link className="text-danger" to='/userEvents'>{loggedInUser.name}</Link></h6>
+                        loggedInUser &&
+                        <div>
+                            <h6 className='px-3 mt-2'>
+                                <Link className="text-danger" to='/userEvents'>{name}</Link>
+                                <img className="ml-2 user-img" src={photo} alt=""/>
+                            </h6>
+                            
+                        </div>
                     }
                     <NavLink className='mr-2' to='/register'><button className='register btn btn-primary'>Register</button></NavLink>
                     <NavLink className=' ' to='/admin'><button className='admin btn btn-dark'>Admin</button></NavLink>
