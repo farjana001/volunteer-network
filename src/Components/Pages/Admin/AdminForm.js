@@ -1,10 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
-import logo from '../../logos/Group 1329.png';
-import plusIcon from '../../logos/plus 1.png';
+import logo from '../../../logos/Group 1329.png';
+import plusIcon from '../../../logos/plus 1.png';
 
-const Admin = () => {
+const AdminForm = () => {
     const history = useHistory()
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
@@ -62,4 +62,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default AdminForm;

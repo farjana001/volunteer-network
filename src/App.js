@@ -10,9 +10,9 @@ import Home from './Components/Home/Home';
 import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
 import PrivateRoute from './Components/PrivateRoute';
-import SingleUserEvents from './Components/Pages/SingleUserEvents';
-import EventList from './Components/Pages/EventList';
-import Admin from './Components/Pages/Admin';
+import SingleUserEvents from './Components/Pages/Events/SingleUserEvents';
+import EventList from './Components/Pages/Events/EventList';
+import AdminForm from './Components/Pages/Admin/AdminForm';
 import NotMatch from './Components/NotMatch';
 import DeleteNote from './Components/Pages/DeleteNote';
 
@@ -57,7 +57,7 @@ function App() {
             <EventList />
           </Route>
           <Route path="/admin">
-            <Admin />
+            <AdminForm />
           </Route>
           <Route path="/delete">
             <DeleteNote />

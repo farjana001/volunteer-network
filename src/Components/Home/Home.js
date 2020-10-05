@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
-import AdminEvents from '../Pages/AdminEvents';
+import AdminEvents from '../Pages/Admin/AdminEvents';
 import Footer from './Footer';
 import Header from './Header';
 import HomeCard from './HomeCard';

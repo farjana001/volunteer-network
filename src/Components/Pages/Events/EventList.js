@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { UserContext } from '../../App';
-import logo from '../../logos/Group 1329.png';
-import trash from '../../logos/trash-2 9.png';
-import plusIcon from '../../logos/plus 1.png';
+import logo from '../../../logos/Group 1329.png';
+import trash from '../../../logos/trash-2 9.png';
+import plusIcon from '../../../logos/plus 1.png';
+import { UserContext } from '../../../App';
 
 const EventList = () => {
 
