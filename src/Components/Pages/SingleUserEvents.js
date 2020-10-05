@@ -23,12 +23,17 @@ const SingleUserEvents = () => {
     // filtering loggedInUsers details
     const selectedEvents = userEvents.filter(evt => evt.events.email === userEmail.email);
 
+    const handleCancelBtn = id => {
+        const selectedEvent = userEvents.filter(evt => evt._id !== id);
+        setUserEvents(selectedEvent);
+    }
+
     return (
         <div className='container page-bg'>
             <div className="row d-flex">
                 <div className="col row">
                     {
-                        selectedEvents.map(evt => <SingleUserEventDetail singleUserEvents={evt}></SingleUserEventDetail>)
+                        selectedEvents.map(evt => <SingleUserEventDetail singleUserEvents={evt} handleCancelBtn={handleCancelBtn}></SingleUserEventDetail>)
                     }
                 </div>
             </div>

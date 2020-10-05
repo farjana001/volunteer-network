@@ -13,6 +13,7 @@ import PrivateRoute from './Components/PrivateRoute';
 import SingleUserEvents from './Components/Pages/SingleUserEvents';
 import EventList from './Components/Pages/EventList';
 import Header from './Components/Home/Header';
+import Admin from './Components/Pages/Admin';
 
 
 export const UserContext = createContext();
@@ -55,6 +56,9 @@ function App() {
           </Route>
           <Route path="/events">
             <EventList />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
           <PrivateRoute path="/title/:cardTitle">
             <Register />

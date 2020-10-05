@@ -16,7 +16,19 @@ const EventList = () => {
     }, [])
 
     const deleteEvent = id => {
-        console.log(id);
+        const selectedEvent = events.filter(evt => evt._id !== id);
+        setEvents(selectedEvent);
+        // fetch(`http://localhost:5000/userEvent/delete/${id}`, {
+        //     method: 'DELETE',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(selectedEvent)
+        // })
+        // .then(res => res.json())
+        // .then(result => {
+        //  console.log('deleted');
+        // })
     }
     return (
         <>

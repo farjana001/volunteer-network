@@ -103,14 +103,13 @@ input:focus{
   /* padding-right: 80px; */
   font-weight: 500;
 }
-.ship-form{
+.admin-form{
   margin: 30px 100px;
 }
-.ship-form input {
+.admin-form input {
   display: block;
   margin-top: 30px;
-  padding-top: 5px;
-  border: 1px solid gray;
+  border: 1px solid rgb(156, 155, 155);
   border-radius: 5px;
   width: 300px;
 }
@@ -135,6 +134,10 @@ input:focus{
 .deleteBtn:focus{
   border: none;
   outline:none;
+}
+
+.description-input{
+  height: 100px;
 }
 
 

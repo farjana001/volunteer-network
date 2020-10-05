@@ -15,7 +15,7 @@ const Register = () => {
     // sending form data to server
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        const volunteerDetails = { events: data, orderTime: new Date() }
+        const volunteerDetails = { events: data }
 
         fetch('http://localhost:5000/addEvents', {
             method: 'POST',
