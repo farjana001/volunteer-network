@@ -105,6 +105,10 @@ input:focus{
 }
 
 /* styling registered item list page */
+.list-body{
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgb(185, 184, 184);
+}
 .list-heading {
   border-radius: 25px;
   background-color: #d4d8db;
@@ -124,6 +128,10 @@ input:focus{
 .add-event{
   background-color:rgb(30, 121, 240);
   color: white;
+}
+.sidebar{
+  width:300px;
+  background-color: white;
 }
 
 
@@ -159,4 +167,13 @@ input:focus{
   position: relative;
   top: 8%;
   height: 200px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td{
+  padding: 10px;
 }

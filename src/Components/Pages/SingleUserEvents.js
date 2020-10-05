@@ -27,7 +27,7 @@ const SingleUserEvents = () => {
     const selectedEvents = userEvents.filter(evt => evt.events.email === userEmail.email);
 
     const handleCancelBtn = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://nameless-thicket-49062.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
