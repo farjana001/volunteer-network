@@ -27,3 +27,5 @@ A single page social service based volunteer web app.
 
 [Back-end Repository](https://github.com/farjana001/volunteer-network-server)
 
+[Resume](https://drive.google.com/file/d/1l-BxPeVAvRoGX8ZJbENxtGiR-8YqpaGN/view?usp=sharing)
+
