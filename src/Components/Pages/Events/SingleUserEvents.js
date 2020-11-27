@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Header from '../../Home/Header';
 import SingleUserEventDetail from './SingleUserEventDetail'
-
+import spinner from '../../../images/spinner.gif';
 
 
 
@@ -32,20 +32,23 @@ const SingleUserEvents = () => {
         fetch(`https://nameless-thicket-49062.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(result => {
-            if(result > 0){
-                history.push('/delete');
-            }
-        })
+            .then(res => res.json())
+            .then(result => {
+                if (result > 0) {
+                    history.push('/delete');
+                }
+            })
         console.log(id);
     }
 
     return (
-        <div style={{height:'100vh'}} className='container page-bg'>
+        <div style={{ height: '100vh' }} className='container page-bg'>
             <Header />
             <div className="row d-flex">
                 <div className="col row">
+                    {
+                        selectedEvents.length === 0 && <div className="my-5 spinner mx-auto"><img className="w-50" src={spinner} alt="" /></div>
+                    }
                     {
                         selectedEvents.map(evt => <SingleUserEventDetail key={evt._id} singleUserEvents={evt} handleCancelBtn={handleCancelBtn}></SingleUserEventDetail>)
                     }
