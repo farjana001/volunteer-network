@@ -18,7 +18,12 @@ const Home = () => {
 
                 <div className="search my-4">
                     <form action="form-control">
-                        <input className='input ml-4' type="text" placeholder="Search..." />
+                    <input
+                                className='input ml-4'
+                                type="text"
+                                value={inputData}
+                                onChange={handleChange}
+                                placeholder="Search..." />
                         <button className="search-button rounded-right">Search</button>
                     </form>
                 </div>
